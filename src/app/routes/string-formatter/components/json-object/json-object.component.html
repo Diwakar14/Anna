@@ -1,12 +1,13 @@
-<div (click)="collapsed = !collapsed" class="prop">
+<div (click)="collapsed = !collapsed" class="prop" [title]="item.type">
   <i
-    class="bi bi-caret-right-fill me-2"
+    class="bi bi-caret-{{ !collapsed ? 'right' : 'down' }}-fill me-2"
     *ngIf="item.type === 'object' || item.type === 'array'"
   ></i>
-  <i class="bi bi-123 me-1" *ngIf="item.type === 'number'"></i>
-  <i class="bi bi-type me-1" *ngIf="item.type === 'string'"></i>
-  <i class="bi bi-toggles me-1" *ngIf="item.type === 'boolean'"></i>
+  <i class="bi bi-123 ms-4 me-1" *ngIf="item.type === 'number'"></i>
+  <i class="bi bi-type ms-4 me-1" *ngIf="item.type === 'string'"></i>
+  <i class="bi bi-toggles ms-4 me-1" *ngIf="item.type === 'boolean'"></i>
   <i class="bi bi-grid-3x2-gap me-1" *ngIf="item.type === 'array'"></i>
+  <i class="bi bi-filetype-xml ms-4 me-1" *ngIf="item.type === 'xmlString'"></i>
   <i class="bi bi-braces me-1" *ngIf="item.type === 'object'"></i>
   <span class="fw-semibold key">{{ item.key + ": " }}</span>
   <span class="value text-primary-emphasis" *ngIf="item.value">

@@ -32,7 +32,11 @@ export function parseJSON(dataObject: any, container: any[]) {
         let type = stringType ?? 'string';
         container.push({ key: key, type: type, value: dataObject[key] });
       } else {
-        container.push({ key: key, type: 'boolean', value: dataObject[key] });
+        container.push({
+          key: key,
+          type: 'boolean',
+          value: dataObject[key] + '',
+        });
       }
     });
   }
