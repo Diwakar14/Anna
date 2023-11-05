@@ -1,0 +1,113 @@
+<div
+  class="backdrop"
+  *ngIf="toggleShowHide"
+  (click)="close()"
+  role="button"
+></div>
+<div class="filter-box" *ngIf="toggleShowHide" @SlideDown>
+  <form [formGroup]="filterForm" (ngSubmit)="apply()">
+    <div class="filter-body p-2">
+      <div class="title">Sort</div>
+      <div class="filter-sort mb-2">
+        <div
+          class="justify-content-between d-flex"
+          role="group"
+          aria-label="Basic radio toggle button group"
+        >
+          <div class="position-relative">
+            <input
+              type="radio"
+              class="btn-checked"
+              checked
+              formControlName="sort"
+              id="asc"
+              value="asc"
+            />
+            <label class="my-btn btn-secondary" for="asc">
+              <i class="bi bi-sort-up"></i>
+              Ascending</label
+            >
+          </div>
+
+          <div class="position-relative">
+            <input
+              type="radio"
+              formControlName="sort"
+              class="btn-checked"
+              id="desc"
+              value="desc"
+            />
+            <label class="my-btn btn-secondary" for="desc">
+              <i class="bi bi-sort-down"></i>
+              Descending</label
+            >
+          </div>
+        </div>
+      </div>
+
+      <div formGroupName="filter">
+        <div class="title">Filter</div>
+        <select
+          class="form-select form-select-sm mb-2"
+          formControlName="condition1"
+        >
+          <option [value]="opt.key" *ngFor="let opt of conditions">
+            {{ opt.value }}
+          </option>
+        </select>
+        <input
+          class="form-control form-control-sm mb-2"
+          type="text"
+          placeholder="Enter value"
+          formControlName="conditionValue1"
+          aria-label=".form-control-sm example"
+        />
+
+        <div class="justify-content-start d-flex mb-2" role="group">
+          <div class="position-relative me-2">
+            <input
+              type="radio"
+              class="btn-checked"
+              checked
+              value="and"
+              formControlName="operator"
+              id="and"
+            />
+            <label class="my-btn btn-secondary" for="and">AND</label>
+          </div>
+
+          <div class="position-relative">
+            <input
+              type="radio"
+              class="btn-checked"
+              formControlName="operator"
+              value="or"
+              id="or"
+            />
+            <label class="my-btn btn-secondary" for="or">OR</label>
+          </div>
+        </div>
+
+        <select
+          class="form-select form-select-sm mb-2"
+          formControlName="condition2"
+        >
+          <option [value]="opt.key" *ngFor="let opt of conditions">
+            {{ opt.value }}
+          </option>
+        </select>
+        <input
+          class="form-control form-control-sm"
+          type="text"
+          placeholder="Enter value"
+          formControlName="conditionValue2"
+          aria-label=".form-control-sm example"
+        />
+      </div>
+    </div>
+    <div class="action">
+      <button class="my-btn btn-secondary" (click)="remove()">Remove</button>
+      <button class="my-btn btn-primary btn-sm" type="submit">Apply</button>
+    </div>
+  </form>
+</div>

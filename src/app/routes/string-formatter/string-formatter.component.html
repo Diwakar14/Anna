@@ -1,0 +1,23 @@
+<ul>
+  <ng-container
+    *ngTemplateOutlet="
+      recursiveListTmpl;
+      context: { list: jsonData, formatter: 'json' }
+    "
+  ></ng-container>
+</ul>
+
+<ng-template #recursiveListTmpl let-list="list" let-formatter="formatter">
+  <ul *ngFor="let item of list">
+    <app-json-object
+      *ngIf="formatter == 'json'"
+      [item]="item"
+      [recursiveListTmpl]="recursiveListTmpl"
+    ></app-json-object>
+    <app-xml-object
+      *ngIf="formatter == 'xml'"
+      [item]="item"
+      [recursiveListTmpl]="recursiveListTmpl"
+    ></app-xml-object>
+  </ul>
+</ng-template>

@@ -1,0 +1,35 @@
+<!-- app.component.html -->
+
+<div class="container">
+  <h1>A very simple liveQuery() example</h1>
+  <div class="d-flex my-2">
+    <input
+      class="form-control me-2"
+      type="text"
+      placeholder="Search People..."
+      [(ngModel)]="searchItem"
+      (ngModelChange)="search($event)"
+    />
+    <button class="btn btn-primary" (click)="sort()">Sort</button>
+  </div>
+  <span [hidden]="!searching">Loading...</span>
+  <div class="alert alert-info py-2">Total:{{ totalItems }}</div>
+
+  <cdk-virtual-scroll-viewport
+    itemSize="41"
+    minBufferPx="200"
+    maxBufferPx="400"
+    class="viewport list-group"
+  >
+    <div
+      class="list-group-item"
+      *cdkVirtualFor="
+        let todoList of todoLists$ | async;
+        trackBy: identifyList;
+        templateCacheSize: 0
+      "
+    >
+      <span>{{ todoList.title }} - {{ todoList.id }}</span>
+    </div>
+  </cdk-virtual-scroll-viewport>
+</div>

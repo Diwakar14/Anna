@@ -1,0 +1,103 @@
+<div class="container-fluid">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="d-flex">
+      <span class="me-3"> Rows: {{ clothes.length }} </span>
+      <span> Indexed: 0 </span>
+    </div>
+    <div class="py-2 align-items-center d-flex">
+      <span class="me-3">
+        <i class="bi bi-info-circle-fill"></i> Pause Timer: 0
+      </span>
+      <button
+        class="btn btn-outline-success btn-sm"
+        [disabled]="isLoading"
+        (click)="getData()"
+      >
+        <i class="bi bi-play"></i>
+        Start
+      </button>
+      <button
+        class="btn btn-outline-secondary btn-sm ms-2"
+        [disabled]="!isLoading"
+        (click)="getData()"
+      >
+        <i class="bi bi-pause"></i>
+        Pause
+      </button>
+      <button
+        class="btn btn-outline-info btn-sm ms-2"
+        [disabled]="!isLoading"
+        (click)="play()"
+      >
+        <i class="bi bi-stop"></i>
+        Stop
+      </button>
+      <button
+        class="btn btn-outline-secondary btn-sm ms-2"
+        [disabled]="!isLoading"
+        (click)="play()"
+      >
+        <i class="bi bi-arrow-clockwise"></i>
+        Restart
+      </button>
+    </div>
+  </div>
+
+  <div class="card table-card p-0 shadow-sm">
+    <table class="table table-hover">
+      <thead class="header-fixed">
+        <tr>
+          <th scope="col">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                name="selectAll"
+                [(ngModel)]="selectAll"
+                (ngModelChange)="checkAll($event)"
+                id="flexCheckDefault"
+              />
+            </div>
+          </th>
+          <th scope="col">#</th>
+          <th
+            *ngFor="let header of headers; index as i"
+            class="position-relative"
+          >
+            {{ header.name }}
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- trackBy: trackItem -->
+        <tr
+          *ngFor="let cloth of clothes; trackBy: trackItem; index as i"
+          role="list"
+          [class.selected]="cloth.checked"
+        >
+          <th scope="row">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                value=""
+                name="cloth.id"
+                [(ngModel)]="cloth.checked"
+                id="list-{{ i }}"
+              />
+            </div>
+          </th>
+          <th scope="row">{{ cloth.id }}</th>
+          <td>{{ cloth.name }}</td>
+          <td>{{ cloth.mainCategory }}</td>
+          <td>{{ cloth.subCategory }}</td>
+          <td class="text-center">{{ cloth.ratings }}</td>
+          <td class="text-center">{{ cloth.noOfRatings }}</td>
+          <td class="text-end">{{ cloth.discountPrice }}</td>
+          <td class="text-end">{{ cloth.actualPrice }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

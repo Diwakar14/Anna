@@ -1,0 +1,11 @@
+<strong>{{ "<" + item.key + " " + attributes + " >" }}</strong>
+<span *ngIf="item.value">{{ item.value }}</span>
+<li *ngIf="item.type === 'parent'">
+  <ng-container
+    *ngTemplateOutlet="
+      recursiveListTmpl;
+      context: { list: item.values, formatter: 'xml' }
+    "
+  ></ng-container>
+</li>
+<strong>{{ "<\/" + item.key + ">" }}</strong>
