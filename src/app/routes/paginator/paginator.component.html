@@ -1,0 +1,61 @@
+<div class="container-fluid">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Title</th>
+        <th scope="col">Description</th>
+        <th scope="col">Price</th>
+        <th scope="col">Stock</th>
+        <th scope="col">Category</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let prod of products">
+        <th>{{ prod.id }}</th>
+        <td>{{ prod.title }}</td>
+        <td>{{ prod.description }}</td>
+        <td>{{ prod.price }}</td>
+        <td>{{ prod.stock }}</td>
+        <td>{{ prod.category }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <nav
+    aria-label="Page navigation example"
+    class="d-flex align-items-center justify-content-between"
+  >
+    <div class="">
+      <strong>Records: {{ products.length }}</strong>
+    </div>
+    <ul class="pagination justify-content-end">
+      <li class="page-item" [class.disabled]="pageNumber == 1">
+        <button
+          class="page-link"
+          (click)="prevPage()"
+          [disabled]="pageNumber == 1"
+        >
+          Previous
+        </button>
+      </li>
+      <li
+        class="page-item"
+        *ngFor="let p of getPages(totalPage); index as i"
+        [class.active]="i == pageNumber - 1"
+        (click)="getProductAtPage(i + 1)"
+      >
+        <button class="page-link">{{ i + 1 }}</button>
+      </li>
+      <li class="page-item" [class.disabled]="pageNumber == totalPage">
+        <button
+          (click)="nextPage()"
+          [disabled]="pageNumber == totalPage"
+          class="page-link"
+          href="#"
+        >
+          Next
+        </button>
+      </li>
+    </ul>
+  </nav>
+</div>

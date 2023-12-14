@@ -63,6 +63,8 @@ Since Docker depends host kernal, image build for one OS may not work in other. 
 - docker stop - Stops a container.
 - docker image - Shows list of all he images
 - docker ps - Shows available containers.
+- docker rmi: removes image.
+- docker rm: remove container.
 - docker run -d: Run the container in detached mode.
   - -p `<host>:<containerPort>`: Port to bind
 - docker exec -it `<name/id of the container> /bin/sh`: Get access to the shell of the container running in interactive mode.

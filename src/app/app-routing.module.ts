@@ -23,6 +23,13 @@ const routes: Routes = [
     component: StringFormatterComponent,
   },
   {
+    path: 'paginator',
+    loadChildren: () =>
+      import('./routes/paginator/paginator.module').then(
+        (m) => m.PaginatorModule
+      ),
+  },
+  {
     path: '**',
     redirectTo: 'data-hub',
   },
