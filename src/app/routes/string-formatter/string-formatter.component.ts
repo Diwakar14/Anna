@@ -13,11 +13,31 @@ export class StringFormatterComponent implements OnInit {
 
   jsonData: any[] = [];
   json = dataJSON;
+  formatter: string = 'json';
+  rawData: string = '';
 
   ngOnInit(): void {
-    const data = parseJSON(this.json, []); // parseXML(xmlData);
+    const data = parseJSON(this.json, []);
 
     console.log(data);
     this.jsonData = data;
+  }
+
+  formatXml() {
+    this.formatter = 'xml';
+    const data = parseXML(xmlData);
+
+    console.log(data);
+    this.jsonData = data;
+  }
+  formatJson() {
+    this.formatter = 'json';
+    const data = parseJSON(this.json, []);
+    this.jsonData = data;
+  }
+
+  showRaw() {
+    this.formatter = 'raw';
+    this.rawData = JSON.stringify(this.json) + '';
   }
 }

@@ -1,9 +1,10 @@
-import { Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-json-object',
   templateUrl: './json-object.component.html',
   styleUrls: ['./json-object.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class JsonObjectComponent {
   @Input()

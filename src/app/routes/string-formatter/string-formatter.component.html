@@ -1,14 +1,33 @@
-<ul>
+<div class="btn-group ms-auto">
+  <button class="btn btn-outline-secondary btn-sm" (click)="showRaw()">
+    RAW
+  </button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="formatJson()">
+    JSON
+  </button>
+  <button class="btn btn-outline-secondary btn-sm" (click)="formatXml()">
+    XML
+  </button>
+</div>
+
+<div class="card shadow-sm border-0" *ngIf="this.formatter === 'raw'">
+  {{ rawData }}
+</div>
+
+<ul
+  class="card shadow-sm border-0 p-0 py-3"
+  *ngIf="this.formatter == 'json' || this.formatter == 'xml'"
+>
   <ng-container
     *ngTemplateOutlet="
       recursiveListTmpl;
-      context: { list: jsonData, formatter: 'json' }
+      context: { list: jsonData, formatter: this.formatter }
     "
   ></ng-container>
 </ul>
 
 <ng-template #recursiveListTmpl let-list="list" let-formatter="formatter">
-  <ul *ngFor="let item of list">
+  <ul *ngFor="let item of list" class="pe-3">
     <app-json-object
       *ngIf="formatter == 'json'"
       [item]="item"

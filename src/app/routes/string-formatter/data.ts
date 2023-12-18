@@ -2019,110 +2019,123 @@ export const dataJSON = {
   },
 };
 
-export const xmlData = `<?xml version="1.0"  encoding="UTF-8"?>
-<root>
-<count>2258780</count>
-<videos>
-<video video_id="19647" 
-            url="https://www.redtube.com/19647" 
-            embed_url="https://embed.redtube.com/?id=19647"  
-            >
-19647</video>
-<video video_id="19749" 
-            url="https://www.redtube.com/19749" 
-            embed_url="https://embed.redtube.com/?id=19749"  
-            >
-19749</video>
-<video video_id="19915" 
-            url="https://www.redtube.com/19915" 
-            embed_url="https://embed.redtube.com/?id=19915"  
-            >
-19915</video>
-<video video_id="19920" 
-            url="https://www.redtube.com/19920" 
-            embed_url="https://embed.redtube.com/?id=19920"  
-            >
-19920</video>
-<video video_id="20400" 
-            url="https://www.redtube.com/20400" 
-            embed_url="https://embed.redtube.com/?id=20400"  
-            >
-20400</video>
-<video video_id="22763" 
-            url="https://www.redtube.com/22763" 
-            embed_url="https://embed.redtube.com/?id=22763"  
-            >
-22763</video>
-<video video_id="22907" 
-            url="https://www.redtube.com/22907" 
-            embed_url="https://embed.redtube.com/?id=22907"  
-            >
-22907</video>
-<video video_id="22910" 
-            url="https://www.redtube.com/22910" 
-            embed_url="https://embed.redtube.com/?id=22910"  
-            >
-22910</video>
-<video video_id="22917" 
-            url="https://www.redtube.com/22917" 
-            embed_url="https://embed.redtube.com/?id=22917"  
-            >
-22917</video>
-<video video_id="22919" 
-            url="https://www.redtube.com/22919" 
-            embed_url="https://embed.redtube.com/?id=22919"  
-            >
-22919</video>
-<video video_id="22922" 
-            url="https://www.redtube.com/22922" 
-            embed_url="https://embed.redtube.com/?id=22922"  
-            >
-22922</video>
-<video video_id="24403" 
-            url="https://www.redtube.com/24403" 
-            embed_url="https://embed.redtube.com/?id=24403"  
-            >
-24403</video>
-<video video_id="24547" 
-            url="https://www.redtube.com/24547" 
-            embed_url="https://embed.redtube.com/?id=24547"  
-            >
-24547</video>
-<video video_id="24692" 
-            url="https://www.redtube.com/24692" 
-            embed_url="https://embed.redtube.com/?id=24692"  
-            >
-24692</video>
-<video video_id="24960" 
-            url="https://www.redtube.com/24960" 
-            embed_url="https://embed.redtube.com/?id=24960"  
-            >
-24960</video>
-<video video_id="25040" 
-            url="https://www.redtube.com/25040" 
-            embed_url="https://embed.redtube.com/?id=25040"  
-            >
-25040</video>
-<video video_id="26026" 
-            url="https://www.redtube.com/26026" 
-            embed_url="https://embed.redtube.com/?id=26026"  
-            >
-26026</video>
-<video video_id="26447" 
-            url="https://www.redtube.com/26447" 
-            embed_url="https://embed.redtube.com/?id=26447"  
-            >
-26447</video>
-<video video_id="26448" 
-            url="https://www.redtube.com/26448" 
-            embed_url="https://embed.redtube.com/?id=26448"  
-            >
-26448</video>
-<video video_id="26860" 
-            url="https://www.redtube.com/26860" 
-            embed_url="https://embed.redtube.com/?id=26860"  
-            >
-26860</video>
-</videos>
-</root>
-`;
+export const xmlData = `<?xml version="1.0"?>
+<catalog>
+   <book id="bk101">
+      <author>Gambardella, Matthew</author>
+      <title>XML Developer's Guide</title>
+      <genre>Computer</genre>
+      <price>44.95</price>
+      <publish_date>2000-10-01</publish_date>
+      <description>An in-depth look at creating applications 
+      with XML.</description>
+   </book>
+   <book id="bk102">
+      <author>Ralls, Kim</author>
+      <title>Midnight Rain</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-12-16</publish_date>
+      <description>A former architect battles corporate zombies, 
+      an evil sorceress, and her own childhood to become queen 
+      of the world.</description>
+   </book>
+   <book id="bk103">
+      <author>Corets, Eva</author>
+      <title>Maeve Ascendant</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2000-11-17</publish_date>
+      <description>After the collapse of a nanotechnology 
+      society in England, the young survivors lay the 
+      foundation for a new society.</description>
+   </book>
+   <book id="bk104">
+      <author>Corets, Eva</author>
+      <title>Oberon's Legacy</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2001-03-10</publish_date>
+      <description>In post-apocalypse England, the mysterious 
+      agent known only as Oberon helps to create a new life 
+      for the inhabitants of London. Sequel to Maeve 
+      Ascendant.</description>
+   </book>
+   <book id="bk105">
+      <author>Corets, Eva</author>
+      <title>The Sundered Grail</title>
+      <genre>Fantasy</genre>
+      <price>5.95</price>
+      <publish_date>2001-09-10</publish_date>
+      <description>The two daughters of Maeve, half-sisters, 
+      battle one another for control of England. Sequel to 
+      Oberon's Legacy.</description>
+   </book>
+   <book id="bk106">
+      <author>Randall, Cynthia</author>
+      <title>Lover Birds</title>
+      <genre>Romance</genre>
+      <price>4.95</price>
+      <publish_date>2000-09-02</publish_date>
+      <description>When Carla meets Paul at an ornithology 
+      conference, tempers fly as feathers get ruffled.</description>
+   </book>
+   <book id="bk107">
+      <author>Thurman, Paula</author>
+      <title>Splish Splash</title>
+      <genre>Romance</genre>
+      <price>4.95</price>
+      <publish_date>2000-11-02</publish_date>
+      <description>A deep sea diver finds true love twenty 
+      thousand leagues beneath the sea.</description>
+   </book>
+   <book id="bk108">
+      <author>Knorr, Stefan</author>
+      <title>Creepy Crawlies</title>
+      <genre>Horror</genre>
+      <price>4.95</price>
+      <publish_date>2000-12-06</publish_date>
+      <description>An anthology of horror stories about roaches,
+      centipedes, scorpions  and other insects.</description>
+   </book>
+   <book id="bk109">
+      <author>Kress, Peter</author>
+      <title>Paradox Lost</title>
+      <genre>Science Fiction</genre>
+      <price>6.95</price>
+      <publish_date>2000-11-02</publish_date>
+      <description>After an inadvertant trip through a Heisenberg
+      Uncertainty Device, James Salway discovers the problems 
+      of being quantum.</description>
+   </book>
+   <book id="bk110">
+      <author>O'Brien, Tim</author>
+      <title>Microsoft .NET: The Programming Bible</title>
+      <genre>Computer</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-09</publish_date>
+      <description>Microsoft's .NET initiative is explored in 
+      detail in this deep programmer's reference.</description>
+   </book>
+   <book id="bk111">
+      <author>O'Brien, Tim</author>
+      <title>MSXML3: A Comprehensive Guide</title>
+      <genre>Computer</genre>
+      <price>36.95</price>
+      <publish_date>2000-12-01</publish_date>
+      <description>The Microsoft MSXML3 parser is covered in 
+      detail, with attention to XML DOM interfaces, XSLT processing, 
+      SAX and more.</description>
+   </book>
+   <book id="bk112">
+      <author>Galos, Mike</author>
+      <title>Visual Studio 7: A Comprehensive Guide</title>
+      <genre>Computer</genre>
+      <price>49.95</price>
+      <publish_date>2001-04-16</publish_date>
+      <description>Microsoft Visual Studio 7 is explored in depth,
+      looking at how Visual Basic, Visual C++, C#, and ASP+ are 
+      integrated into a comprehensive development 
+      environment.</description>
+   </book>
+</catalog>`;

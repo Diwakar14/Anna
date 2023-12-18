@@ -1,0 +1,29 @@
+.key {
+  font-size: 0.9rem;
+  font-family: monospace;
+}
+.value {
+  font-size: 0.9rem;
+  font-family: monospace;
+  letter-spacing: -1px;
+}
+.bi {
+  font-size: small;
+}
+.prop {
+  cursor: pointer;
+}
+
+.object-box {
+  transition: all ease 0.2s;
+  border: 1px dashed transparent;
+  &:hover {
+    border: 1px dashed var(--bs-success);
+    transition: all ease 0.2s;
+  }
+}
+
+.collapsed-box {
+  border: 1px solid #eee;
+  border-radius: 1rem;
+}

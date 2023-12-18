@@ -12,10 +12,15 @@ export function parseJSON(dataObject: any, container: any[]) {
           container.push(newCont);
         } else {
           let completeArray: any = [];
-          dataObject[key].forEach((item: any) => {
+          dataObject[key].forEach((item: any, index: number) => {
             if (typeof item === 'object') {
               let cont = parseJSON(item, []);
-              completeArray.push(cont);
+              completeArray.push({
+                key: index + '',
+                type: 'array',
+                value: 'Array(' + cont.length + ')',
+                values: cont,
+              });
             }
           });
           container.push({
